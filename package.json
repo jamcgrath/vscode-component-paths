@@ -12,6 +12,21 @@
   "activationEvents": [],
   "main": "./extension.js",
   "contributes": {
+    "commands": [
+      {
+        "command": "extension.findAllComponentReferences",
+        "title": "Find All Component References"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.findAllComponentReferences",
+          "when": "resourceExtname =~ /\\.(js|jsx|ts|tsx|vue)$/",
+          "group": "navigation"
+        }
+      ]
+    },
     "commands": [{
       "command": "component-reference-finder.helloWorld",
       "title": "Hello World"
