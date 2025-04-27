@@ -42,6 +42,7 @@
     "@types/vscode": "^1.99.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "20.x",
+    "typescript": "^5.0.0",
     "eslint": "^9.23.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1"
