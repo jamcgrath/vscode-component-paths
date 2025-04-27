@@ -18,6 +18,10 @@
       {
         "command": "extension.findAllComponentReferences",
         "title": "Find All Component References"
+      },
+      {
+        "command": "component-reference-finder.helloWorld",
+        "title": "Hello World"
       }
     ],
     "menus": {
@@ -28,11 +32,7 @@
           "group": "navigation"
         }
       ]
-    },
-    "commands": [{
-      "command": "component-reference-finder.helloWorld",
-      "title": "Hello World"
-    }]
+    }
   },
   "scripts": {
     "compile": "tsc -p .",
