@@ -33,6 +33,7 @@
     }]
   },
   "scripts": {
+    "compile": "tsc -p .",
     "lint": "eslint .",
     "pretest": "pnpm run lint",
     "test": "vscode-test"
