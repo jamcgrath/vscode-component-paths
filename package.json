@@ -20,7 +20,7 @@
     "commands": [
       {
         "command": "extension.findAllComponentReferences",
-        "title": "Find All Component References"
+        "title": "Find All Component References Paths"
       },
       {
         "command": "component-reference-finder.helloWorld",
