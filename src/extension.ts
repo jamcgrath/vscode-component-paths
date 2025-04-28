@@ -21,13 +21,19 @@ export function activate(context: vscode.ExtensionContext) {
 
       // 3) show pick‐list
       const items = Array.from(results).sort();
-      const picks = await vscode.window.showQuickPick(items, {
-        canPickMany: true,
-        placeHolder: 'Select files to copy their relative paths'
-      });
-      if (!picks || picks.length === 0) {
+      // include a “Select All” entry at the top
+      const selectAllItem = '$(check) Select All';
+      const picksRaw = await vscode.window.showQuickPick(
+        [selectAllItem, ...items],
+        {
+          canPickMany: true,
+          placeHolder: 'Select files to copy their relative paths'
+        }
+      );
+      if (!picksRaw || picksRaw.length === 0) {
         return;
       }
+      const picks = picksRaw.includes(selectAllItem) ? items : picksRaw;
 
       // 4) copy to clipboard
       const text = picks.join('\n');
