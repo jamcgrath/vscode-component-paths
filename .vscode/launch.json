@@ -16,7 +16,7 @@
 				"undefined_publisher.component-reference-finder"
 			],
 			"outFiles": [
-				"${workspaceFolder}/**/*.js"
+				"${workspaceFolder}/out/**/*.js"
 			]
 		}
 	]
