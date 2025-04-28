@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
       // 2) collect all files that mention it
       const results = new Set<string>();
       await (vscode.workspace as any).findTextInFiles(
-        { pattern: `\\b${compName}\\b`, isRegExp: true },
+        { pattern: `(?<!\\w)${compName}(?!\\w)`, isRegExp: true },
         { include: '**/*.{js,jsx,ts,tsx,vue,svelte}' },
         (match: any) => {
           results.add(vscode.workspace.asRelativePath(match.uri));
