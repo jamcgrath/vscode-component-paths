@@ -1,65 +1,57 @@
-# component-reference-finder README
+# Component Reference Finder
 
-This is the README for your extension "component-reference-finder". After writing up a brief description, we recommend including the following sections.
+Quickly find all references to a component file in your workspace and copy their relative paths to your clipboard.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **Cross-file search**  
+  Scans JavaScript, TypeScript, Vue, and Svelte files for exact matches of a component’s base name.
+- **Explorer context menu**  
+  Right-click any `.js|.jsx|.ts|.tsx|.vue|.svelte` file and select **Find All Component References**.
+- **Command Palette**  
+  Invoke **Find All Component References** from the palette (`Ctrl+Shift+P` / `Cmd+Shift+P`).
+- **Quick-pick & copy**  
+  Choose one or more matching files from the list and have their relative paths automatically copied to your clipboard.
+- **Lightweight & zero-config**  
+  No additional settings or configuration required.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Visual Studio Code **1.99.0** or newer
+- For development/debugging, enable the proposed API `findTextInFiles` (see **Known Issues** below)
+
+## Usage
+
+1. **Open Explorer** and locate the component file you want to analyze (e.g. `Button.vue`).  
+2. **Right-click** the file and choose **Find All Component References**, or run the command from the palette.  
+3. A quick-pick list of all files containing that component name appears.  
+4. Select one or more entries and press **Enter**.  
+5. The selected relative paths are now on your clipboard. Paste anywhere you need them!
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+This extension does **not** contribute any user-configurable settings.
 
 ## Known Issues
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Internally uses the proposed VS Code API `findTextInFiles`. When debugging locally, add this to your `.vscode/launch.json`:
+  ```jsonc
+  "args": [
+    "--extensionDevelopmentPath=${workspaceFolder}",
+    "--enable-proposed-api",
+    "yourPublisher.component-reference-finder"
+  ]
+  ```
+- Future releases will migrate off the proposed API once it becomes stable.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### 1.1.0
+- Added support for Svelte files (`.svelte`).
 
 ### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+- Initial release: search & copy references for JS/TS/Vue components.
 
 ---
 
-## Working with Markdown
-
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Enjoy using Component Reference Finder! Feel free to file issues or pull requests at the [GitHub repository](https://github.com/yourPublisher/component-reference-finder).
