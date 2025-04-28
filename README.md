@@ -22,10 +22,10 @@ Quickly find all references to a component file in your workspace and copy their
 
 ## Usage
 
-1. **Open Explorer** and locate the component file you want to analyze (e.g. `Button.vue`).  
-2. **Right-click** the file and choose **Find All Component References**, or run the command from the palette.  
-3. A quick-pick list of all files containing that component name appears.  
-4. Select one or more entries and press **Enter**.  
+1. **Open Explorer** and locate the component file you want to analyze (e.g. `Button.vue`).
+2. **Right-click** the file and choose **Find All Component References**, or run the command from the palette.
+3. A quick-pick list of all files containing that component name appears.
+4. Select one or more entries and press **Enter**.
 5. The selected relative paths are now on your clipboard. Paste anywhere you need them!
 
 ## Extension Settings
@@ -47,11 +47,14 @@ This extension does **not** contribute any user-configurable settings.
 ## Release Notes
 
 ### 1.1.0
+
 - Added support for Svelte files (`.svelte`).
 
 ### 1.0.0
+
 - Initial release: search & copy references for JS/TS/Vue components.
 
 ---
 
 Enjoy using Component Reference Finder! Feel free to file issues or pull requests at the [GitHub repository](https://github.com/yourPublisher/component-reference-finder).
+whe
